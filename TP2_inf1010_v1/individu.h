@@ -19,7 +19,7 @@ public:
     
     //Constructeurs
     Individu();
-    Individu(string nom, string prenom, string* listeVinsPreferes);
+    Individu(string nom, string prenom, string* listeVinsPreferes,int capaciteListeVins, int tailleListeVins, double prixEntree);
     Individu(const Individu& unIndividu);
     
     //Destructeurs
@@ -33,29 +33,37 @@ public:
     
     //Surcharge d'operateurs
     bool operator==(Individu& unIndividu) const;
-    Individu& operator=(const Individu& unIndividu) const;
+    Individu& operator=(const Individu& unIndividu);
     
     //Fonction add et del Pour listeVinsPreferes
     void add(string nomDuVin);
     void del(string nomDuVin);
     
+    //Fonction getvinPrefere(), getNbVinsPreferes()
+    string getVinPreferes(int i) const;
+    int getNbVinPreferes() const;
+    
     //Fonction getPrix pour prixEntree
     double getPrix() const;
     
-    //Methode getString()
     
+    //Methode getString()
     string getString() const;
     
     
 protected:
     
-    double prixEntree;
+    double prixEntree_;
     
 private:
     
     string nom_;
     string prenom_;
     string* listeVinsPreferes_;
+    int tailleListeVins_;          // taille et capacite nous permet de gerer les tableaux dynamiques
+    int capaciteListeVins_;        // comme s'il s'agissait de vecteurs.
+    
+    
 };
 
 #endif // _INDIVIDU_H_
