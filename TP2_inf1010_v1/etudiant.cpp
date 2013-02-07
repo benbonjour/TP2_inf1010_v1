@@ -132,7 +132,7 @@ string Etudiant::getString() const
 		information << " - Vins : ";
 		for (int i = 0; i < nbVins; i++)
 		{
-			information << getVinsPreferes(i);
+			information << getVinPrefere(i);
 			if (i != nbVins - 1)
 			{
 				information << ", ";
