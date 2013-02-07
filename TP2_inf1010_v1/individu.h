@@ -40,8 +40,8 @@ public:
     void del(string nomDuVin);
     
     //Fonction getvinPrefere(), getNbVinsPreferes()
-    string getVinPreferes(int i) const;
-    int getNbVinPreferes() const;
+    string getVinPrefere(int i) const;
+    int getNbVinsPreferes() const;
     
     //Fonction getPrix pour prixEntree
     double getPrix() const;

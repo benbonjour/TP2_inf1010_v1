@@ -203,27 +203,27 @@ Individu& Individu::operator=(const Individu& unIndividu)
 
 //Fonction getvinPrefere(), getNbVinsPreferes()
 /************************************************************************************
- * Description              : Individu::getVinPreferes(int i) const, fonction qui ajoute un
+ * Description              : Individu::getVinPrefere(int i) const, fonction qui ajoute un
  *                            nom de vin à la liste du vin fromage.
  * Parametre                : Int i(IN): le numero correspondant au vin preferes du 
  *                            tableau des vins preferes de l'individu.
  * Valeur de retour         : String nomDuVin: nom du vin prefere
  * Remarque                 : AUCUNE
  ************************************************************************************/
-string Individu::getVinPreferes(int i) const
+string Individu::getVinPrefere(int i) const
 {
     return listeVinsPreferes_[i];
 }
 
 /************************************************************************************
- * Description              : Individu::getNbVinPreferes() const, fonction qui ajoute                            
+ * Description              : Individu::getNbVinsPreferes() const, fonction qui ajoute                            
  *                            un nom de vin à la liste du vin fromage.
  * Parametre                : AUCUN
  * Valeur de retour         : Int tailleListeVin: nb de vin dans la liste de 
  *                            l'individu.
  * Remarque                 : AUCUNE
  ************************************************************************************/
-int Individu::getNbVinPreferes() const
+int Individu::getNbVinsPreferes() const
 {
     return tailleListeVins_;
 }
