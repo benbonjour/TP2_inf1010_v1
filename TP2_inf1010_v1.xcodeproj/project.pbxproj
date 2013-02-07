@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		875D3CFF16C3362B00800E7A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3CFE16C3362B00800E7A /* main.cpp */; };
 		875D3D0116C3362B00800E7A /* TP2_inf1010_v1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 875D3D0016C3362B00800E7A /* TP2_inf1010_v1.1 */; };
+		875D3D1216C3368E00800E7A /* etudiant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D0916C3368E00800E7A /* etudiant.cpp */; };
+		875D3D1316C3368E00800E7A /* individu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D0B16C3368E00800E7A /* individu.cpp */; };
+		875D3D1416C3368E00800E7A /* professeur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D0D16C3368E00800E7A /* professeur.cpp */; };
+		875D3D1516C3368E00800E7A /* vinsetfromages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D0F16C3368E00800E7A /* vinsetfromages.cpp */; };
+		875D3D2716C336A100800E7A /* entreprise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D1816C336A100800E7A /* entreprise.cpp */; };
+		875D3D2816C336A100800E7A /* etudiant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D1A16C336A100800E7A /* etudiant.cpp */; };
+		875D3D2916C336A100800E7A /* individu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D1C16C336A100800E7A /* individu.cpp */; };
+		875D3D2A16C336A100800E7A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D1E16C336A100800E7A /* main.cpp */; };
+		875D3D2B16C336A100800E7A /* professeur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D1F16C336A100800E7A /* professeur.cpp */; };
+		875D3D2C16C336A100800E7A /* vinsetfromages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875D3D2216C336A100800E7A /* vinsetfromages.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +35,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		871E0C4016C355BA00791A1D /* entreprise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entreprise.h; sourceTree = "<group>"; };
 		875D3CFB16C3362B00800E7A /* TP2_inf1010_v1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TP2_inf1010_v1; sourceTree = BUILT_PRODUCTS_DIR; };
 		875D3CFE16C3362B00800E7A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		875D3D0016C3362B00800E7A /* TP2_inf1010_v1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TP2_inf1010_v1.1; sourceTree = "<group>"; };
+		875D3D0916C3368E00800E7A /* etudiant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = etudiant.cpp; path = TP2_inf1010_v1/etudiant.cpp; sourceTree = "<group>"; };
+		875D3D0A16C3368E00800E7A /* etudiant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = etudiant.h; path = TP2_inf1010_v1/etudiant.h; sourceTree = "<group>"; };
+		875D3D0B16C3368E00800E7A /* individu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = individu.cpp; path = TP2_inf1010_v1/individu.cpp; sourceTree = "<group>"; };
+		875D3D0C16C3368E00800E7A /* individu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = individu.h; path = TP2_inf1010_v1/individu.h; sourceTree = "<group>"; };
+		875D3D0D16C3368E00800E7A /* professeur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = professeur.cpp; path = TP2_inf1010_v1/professeur.cpp; sourceTree = "<group>"; };
+		875D3D0E16C3368E00800E7A /* professeur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = professeur.h; path = TP2_inf1010_v1/professeur.h; sourceTree = "<group>"; };
+		875D3D0F16C3368E00800E7A /* vinsetfromages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vinsetfromages.cpp; path = TP2_inf1010_v1/vinsetfromages.cpp; sourceTree = "<group>"; };
+		875D3D1016C3368E00800E7A /* vinsetfromages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vinsetfromages.h; path = TP2_inf1010_v1/vinsetfromages.h; sourceTree = "<group>"; };
+		875D3D1816C336A100800E7A /* entreprise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entreprise.cpp; sourceTree = "<group>"; };
+		875D3D1A16C336A100800E7A /* etudiant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = etudiant.cpp; sourceTree = "<group>"; };
+		875D3D1B16C336A100800E7A /* etudiant.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = etudiant.h; sourceTree = "<group>"; };
+		875D3D1C16C336A100800E7A /* individu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = individu.cpp; sourceTree = "<group>"; };
+		875D3D1D16C336A100800E7A /* individu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = individu.h; sourceTree = "<group>"; };
+		875D3D1E16C336A100800E7A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		875D3D1F16C336A100800E7A /* professeur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = professeur.cpp; sourceTree = "<group>"; };
+		875D3D2016C336A100800E7A /* professeur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = professeur.h; sourceTree = "<group>"; };
+		875D3D2116C336A100800E7A /* TP2_inf1010_v1.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = TP2_inf1010_v1.1; sourceTree = "<group>"; };
+		875D3D2216C336A100800E7A /* vinsetfromages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vinsetfromages.cpp; sourceTree = "<group>"; };
+		875D3D2316C336A100800E7A /* vinsetfromages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vinsetfromages.h; sourceTree = "<group>"; };
+		875D3D2416C336A100800E7A /* TP2_inf1010_v1.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TP2_inf1010_v1.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +77,15 @@
 			children = (
 				875D3CFD16C3362B00800E7A /* TP2_inf1010_v1 */,
 				875D3CFC16C3362B00800E7A /* Products */,
+				875D3D1616C336A100800E7A /* TP2_inf1010_v1 */,
+				875D3D0916C3368E00800E7A /* etudiant.cpp */,
+				875D3D0A16C3368E00800E7A /* etudiant.h */,
+				875D3D0B16C3368E00800E7A /* individu.cpp */,
+				875D3D0C16C3368E00800E7A /* individu.h */,
+				875D3D0D16C3368E00800E7A /* professeur.cpp */,
+				875D3D0E16C3368E00800E7A /* professeur.h */,
+				875D3D0F16C3368E00800E7A /* vinsetfromages.cpp */,
+				875D3D1016C3368E00800E7A /* vinsetfromages.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +104,39 @@
 				875D3D0016C3362B00800E7A /* TP2_inf1010_v1.1 */,
 			);
 			path = TP2_inf1010_v1;
+			sourceTree = "<group>";
+		};
+		875D3D1616C336A100800E7A /* TP2_inf1010_v1 */ = {
+			isa = PBXGroup;
+			children = (
+				875D3D1716C336A100800E7A /* TP2_inf1010_v1 */,
+				875D3D2416C336A100800E7A /* TP2_inf1010_v1.xcodeproj */,
+			);
+			name = TP2_inf1010_v1;
+			sourceTree = "<group>";
+		};
+		875D3D1716C336A100800E7A /* TP2_inf1010_v1 */ = {
+			isa = PBXGroup;
+			children = (
+				875D3D1816C336A100800E7A /* entreprise.cpp */,
+				871E0C4016C355BA00791A1D /* entreprise.h */,
+				875D3D1A16C336A100800E7A /* etudiant.cpp */,
+				875D3D1B16C336A100800E7A /* etudiant.h */,
+				875D3D1C16C336A100800E7A /* individu.cpp */,
+				875D3D1D16C336A100800E7A /* individu.h */,
+				875D3D1E16C336A100800E7A /* main.cpp */,
+				875D3D1F16C336A100800E7A /* professeur.cpp */,
+				875D3D2016C336A100800E7A /* professeur.h */,
+				875D3D2116C336A100800E7A /* TP2_inf1010_v1.1 */,
+				875D3D2216C336A100800E7A /* vinsetfromages.cpp */,
+				875D3D2316C336A100800E7A /* vinsetfromages.h */,
+			);
+			path = TP2_inf1010_v1;
+			sourceTree = "<group>";
+		};
+		875D3D2516C336A100800E7A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +178,12 @@
 			mainGroup = 875D3CF216C3362B00800E7A;
 			productRefGroup = 875D3CFC16C3362B00800E7A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 875D3D2516C336A100800E7A /* Products */;
+					ProjectRef = 875D3D2416C336A100800E7A /* TP2_inf1010_v1.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				875D3CFA16C3362B00800E7A /* TP2_inf1010_v1 */,
@@ -118,6 +197,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				875D3CFF16C3362B00800E7A /* main.cpp in Sources */,
+				875D3D1216C3368E00800E7A /* etudiant.cpp in Sources */,
+				875D3D1316C3368E00800E7A /* individu.cpp in Sources */,
+				875D3D1416C3368E00800E7A /* professeur.cpp in Sources */,
+				875D3D1516C3368E00800E7A /* vinsetfromages.cpp in Sources */,
+				875D3D2716C336A100800E7A /* entreprise.cpp in Sources */,
+				875D3D2816C336A100800E7A /* etudiant.cpp in Sources */,
+				875D3D2916C336A100800E7A /* individu.cpp in Sources */,
+				875D3D2A16C336A100800E7A /* main.cpp in Sources */,
+				875D3D2B16C336A100800E7A /* professeur.cpp in Sources */,
+				875D3D2C16C336A100800E7A /* vinsetfromages.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +305,7 @@
 				875D3D0616C3362B00800E7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
