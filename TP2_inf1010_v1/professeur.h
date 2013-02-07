@@ -18,7 +18,7 @@ class Professeur : public Individu
 public:
     //Constructeurs
     Professeur();
-    Professeur(string departement, string bureau);
+    Professeur(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListesVins, string departement, string bureau, double prixEntree = 0);
     
     //Destructeur
     ~Professeur();

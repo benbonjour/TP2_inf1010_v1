@@ -19,7 +19,7 @@ public:
     
     //Constructeurs
     Individu();
-    Individu(string nom, string prenom, string* listeVinsPreferes,int capaciteListeVins, int tailleListeVins, double prixEntree);
+    Individu(string nom, string prenom, string* listeVinsPreferes,int capaciteListeVins, int tailleListeVins, double prixEntree = 0);
     Individu(const Individu& unIndividu);
     
     //Destructeurs
