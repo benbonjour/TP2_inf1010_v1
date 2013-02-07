@@ -18,7 +18,7 @@ class Etudiant : public Individu
 public:
     //Constructeurs
     Etudiant();
-    Etudiant(string departement, string niveau);
+    Etudiant(string nom, string prenom, string* listeVinsPreferes, string departement, string niveau);
     
     //Destructeur
     ~Etudiant();
