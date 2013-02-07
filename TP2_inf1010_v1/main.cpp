@@ -49,6 +49,7 @@ int main() {
 	// Afficher la liste de tous les individus qui seront présents au
 	// Vins & Fromages en utilisant la méthode afficherIndividus()
 
+	cout << "LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL" << endl;
 	return 0;
 }
 
