@@ -18,7 +18,7 @@ class Entreprise : public Individu
 public:
     //Constructeurs
     Entreprise();
-    Entreprise(string nomEntreprise, int stagiairesCherches, int emploisProposes);
+    Entreprise(string nomEntreprise, string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, int stagiairesCherches, int emploisProposes, double prixEntree = 0);
     
     //Destructeur
     ~Entreprise();

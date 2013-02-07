@@ -39,10 +39,10 @@ Etudiant::Etudiant()
 * Valeur de retour         : AUCUNE
 * Remarque                 : AUCUNE
 ************************************************************************************/
-Etudiant::Etudiant(string nom, string prenom, string* listeVinsPreferes, string departement, string niveau)
-		: Individu(nom, prenom, listeVinsPreferes), departement_(departement), niveau_(niveau)
+Etudiant::Etudiant(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, string departement, string niveau, double prixEntree)
+		: Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListeVins, prixEntree), departement_(departement), niveau_(niveau)
 {
-	prixEntree_ = 14,5;
+
 }
 
 
