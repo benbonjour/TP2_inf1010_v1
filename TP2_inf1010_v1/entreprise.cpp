@@ -23,7 +23,10 @@ using namespace std;
 ************************************************************************************/
 Entreprise::Entreprise()
 {
-
+	Individu::Individu();
+	nomEntreprise_ = "1337 Entreprise";
+	stagiairesCherches_ = 2;
+	emploisProposes_  = 2;
 }
 
 /************************************************************************************
@@ -93,57 +96,80 @@ int Entreprise::getStagiairesCherches() const
 * Description              : int Entreprise::getEmploisProposes() const : Cette
 *							 méthode retourne à l'utilisateur le nombre d'emplois
 *							 proposés 
-* Parametre                : 
-* Valeur de retour         : 
-* Remarque                 : 
+* Parametre                : AUCUN
+* Valeur de retour         : int
+* Remarque                 : Cette méthode est constante
 ************************************************************************************/
 int Entreprise::getEmploisProposes() const
 {
-
+	return emploisProposes_;
 }
 
 /************************************************************************************
-* Description              : 
-* Parametre                : 
-* Valeur de retour         : 
-* Remarque                 : 
+* Description              : void Entreprise::setNomEntreprise(string nomEntreprise) :
+*							 Cette méthode permet de modifier la valeur de nomEntreprise
+*							 par la valeur choisie par l'utilisateur.
+* Parametre                : string nomEntreprise (IN) : nom de l'entreprise à placer
+* Valeur de retour         : AUCUNE
+* Remarque                 : AUCUNE
 ************************************************************************************/
 void Entreprise::setNomEntreprise(string nomEntreprise)
 {
-
+	nomEntreprise_ = nomEntreprise;
 }
 
 /************************************************************************************
-* Description              : 
-* Parametre                : 
-* Valeur de retour         : 
-* Remarque                 : 
+* Description              : void Entreprise::setStagiairesCherches(int stagiairesCherches) :
+*							 Cette méthode permet de modifier la valeur de stagiaireCherches
+*							 par la valeur choisie par l'utilisateur.
+* Parametre                : int stagaireCherches (IN) : nombre de stagaires recherchés
+* Valeur de retour         : AUCUNE
+* Remarque                 : AUCUNE
 ************************************************************************************/
 void Entreprise::setStagiairesCherches(int stagiairesCherches)
 {
-
+	stagiairesCherches_ = stagiairesCherches;
 }
 
 /************************************************************************************
-* Description              : 
-* Parametre                : 
-* Valeur de retour         : 
-* Remarque                 : 
+* Description              : void Entreprise::setEmploisProposes(int emploisProposes) :
+*							 Cette méthode permet de modifier la valeur de emploisProposes
+*							 par la valeur choisie par l'utilisateur.
+* Parametre                : int emploisProposes (IN) : nombre d'emplois disponibles
+* Valeur de retour         : AUCUNE
+* Remarque                 : AUCUNE
 ************************************************************************************/
 void Entreprise::setEmploisProposes(int emploisProposes)
 {
-
+	emploisProposes_ = emploisProposes;
 }
 
 
 //Methode getString()
 /************************************************************************************
-* Description              : 
-* Parametre                : 
-* Valeur de retour         : 
-* Remarque                 : 
+* Description              : string Entreprise::getString() const : Cette méthode permet
+*							 de retourner à l'utilisateur le 
+* Parametre                : AUCUN
+* Valeur de retour         : string
+* Remarque                 : Cette méthode est constante.
 ************************************************************************************/
 string Entreprise::getString() const
 {
+	stringstream information;
+	information << "Entreprise : " << getPrenom() << " " << getNom() << ", " + nomEntreprise_ << " (" << stagiairesCherches_ << " stages, " << emploisProposes_ << " emplois) - Prix : " << getPrix() << " CAD";
+	if ( getNbVinsPreferes() != 0)
+	{
+		int nbVins = getNbVinsPreferes();
+		information << " - Vins : ";
+		for (int i = 0; i < nbVins; i++)
+		{
+			information << getVinPrefere(i);
+			if (i != nbVins - 1)
+			{
+				information << ", ";
+			}
+		}
+	}
 
+	return information.str();
 }
