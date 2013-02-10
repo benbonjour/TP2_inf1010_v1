@@ -35,9 +35,12 @@ public:
     void delEtudiant(Etudiant& unEtudiant);
     
     //Methode Afficher Present
-    string getString() const;
+    string afficherPresent() const;
+    vector<Individu> getListeIndividus() const;
+    string afficherIndividus() const;
     
 private:
+    
     vector<Entreprise*> listeEntreprises_;
     vector<Professeur*> listeProfesseurs_;
     vector<Etudiant*> listeEtudiants_;
