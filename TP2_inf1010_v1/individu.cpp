@@ -7,6 +7,7 @@
  ************************************************************************************/
 
 #include <string>
+#include <iostream>
 #include "individu.h"
 #include <sstream>
 using namespace std;
@@ -265,7 +266,39 @@ void Individu::add(string nomDuVin)
  ************************************************************************************/
 void Individu::del(string nomDuVin)
 {
-    tailleListeVins_--;
+	bool trouve = false;
+	string* nouvelleListe = new string[tailleListeVins_ - 1];
+	for (int i = 0; i < tailleListeVins_ && !trouve; i++)
+	{
+		if (listeVinsPreferes_[i] == nomDuVin)
+		{
+			trouve = true;
+			for (int j = 0, k = 0; j < tailleListeVins_; j++, k++)
+			{
+				if (listeVinsPreferes_[j] != nomDuVin)
+				{
+					nouvelleListe[k] = listeVinsPreferes_[j];
+				}
+				else
+				{
+					k--; //Permet de rester à la bonne case mémoire du tableau pour ajouter 
+						 //le prochain vin qui ne porte pas le même nom que celui que l'on
+						 //souhaite enlever
+				}
+			}
+		}
+	}
+	if (trouve == false)
+	{
+		cout << "Le vin specife n'est pas present dans la liste de preference." << endl;
+	}
+	else
+	{
+		delete [] listeVinsPreferes_;
+		listeVinsPreferes_ = nouvelleListe;
+		tailleListeVins_--;
+		capaciteListeVins_ --;
+	}
 }
 
 //Fonction getPrix pour prixEntree

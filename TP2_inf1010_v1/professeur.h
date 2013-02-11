@@ -7,6 +7,7 @@
  ************************************************************************************/
 
 #include <string>
+#include "individu.h"
 
 using namespace std;
 

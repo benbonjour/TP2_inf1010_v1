@@ -25,7 +25,7 @@ Etudiant::Etudiant()
 {
 	Individu::Individu();
 	departement_ = "Genie des materiaux LOLOLOL";
-	niveau_ = "Même pas obtenu son Diplome d'etude secondaire XD";
+	niveau_ = "Meme pas obtenu son Diplome d'etude secondaire XD";
 	prixEntree_ = 14,5;
 
 }

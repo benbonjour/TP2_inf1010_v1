@@ -7,6 +7,7 @@
  ************************************************************************************/
 
 #include <string>
+#include <iostream>
 #include "individu.h"
 #include "professeur.h"
 #include <sstream>
@@ -43,7 +44,8 @@ Professeur::Professeur()
  * Valeur de retour         : AUCUNE
  * Remarque                 : AUCUNE
  ************************************************************************************/
-Professeur::Professeur(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListesVins, string departement, string bureau, double prixEntree) : Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListesVins, prixEntree)
+Professeur::Professeur(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListesVins, string departement, string bureau, double prixEntree) 
+	: Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListesVins, prixEntree)
 {
     departement_ = departement;
     bureau_ = bureau;
@@ -123,14 +125,19 @@ string Professeur::getString() const
 {
     stringstream information;
     
-    information << "Individu: " << getPrenom() << " " << getNom() << "(" << departement_<< ", " << 
-    bureau_ << ") - Prix:" << prixEntree_ << "CAD";
+    information << "Professeur: " << getPrenom() << " " << getNom() << " (" << departement_<< ", " << 
+    bureau_ << ") - Prix : " << prixEntree_ << " CAD";
     
     if(getNbVinsPreferes() != 0)
     {
-        for (int i = 0; i < getNbVinsPreferes(); i++)
+		information << " Vins - ";
+		for (int i = 0; i < getNbVinsPreferes(); i++)
         {
             information << getVinPrefere(i);
+			if (i != getNbVinsPreferes() - 1)
+			{
+				information << ", ";
+			}
         }
     }
     

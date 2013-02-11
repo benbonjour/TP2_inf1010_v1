@@ -28,6 +28,8 @@ using namespace std;
  ************************************************************************************/
 VinsEtFromages::VinsEtFromages()
 {
+	//TODO : À demander au professeur
+	/*
     Entreprise* uneEntreprise = new Entreprise;
     listeEntreprises_.push_back(uneEntreprise);
     
@@ -36,6 +38,7 @@ VinsEtFromages::VinsEtFromages()
     
     Etudiant* unEtudiant = new Etudiant;
     listeEtudiants_.push_back(unEtudiant);
+	*/
 }
 
 //Destructeur
@@ -73,9 +76,9 @@ void VinsEtFromages::addEntreprise(Entreprise& uneEntreprise)
     
     if(!trouver)  // si l'entreprise n'est pas trouver on l'ajoute
     {
-        Entreprise* deuxEntreprise = new Entreprise;
-        deuxEntreprise[0] = uneEntreprise;
-        listeEntreprises_.push_back(deuxEntreprise);
+        //Entreprise* deuxEntreprise = new Entreprise;
+        //deuxEntreprise = &uneEntreprise;
+        listeEntreprises_.push_back(&uneEntreprise);
     }
              
     
@@ -104,9 +107,9 @@ void VinsEtFromages::addProfesseur(Professeur& unProfesseur)
     
     if(!trouver)  // si le professeur n'est pas trouver on l'ajoute
     {
-        Professeur* deuxProfesseur = new Professeur;
-        deuxProfesseur[0] = unProfesseur;
-        listeProfesseurs_.push_back(deuxProfesseur);
+        //Professeur* deuxProfesseur = new Professeur;
+        //deuxProfesseur = &unProfesseur;
+        listeProfesseurs_.push_back(&unProfesseur);
     }
    
 }
@@ -127,16 +130,16 @@ void VinsEtFromages::addEtudiant(Etudiant& unEtudiant)
         if(listeEtudiants_[i] == &unEtudiant)
         {
             trouver = true;
-            cout << "Erreur le professeur specifiee existe deja : " << endl;
+            cout << "Erreur l'etudiant specifie existe deja : " << endl;
             listeEtudiants_[i]->getString();
         }
     }
     
     if(!trouver)  // si l'etudiant n'est pas trouver on l'ajoute
     {
-        Etudiant* deuxEtudiant = new Etudiant;
-        deuxEtudiant[0] = unEtudiant;
-        listeEtudiants_.push_back(deuxEtudiant);
+        //Etudiant* deuxEtudiant = new Etudiant();
+        //deuxEtudiant = &unEtudiant;
+        listeEtudiants_.push_back(&unEtudiant);
     }
 }
 
@@ -209,38 +212,38 @@ string VinsEtFromages::afficherPresent() const
 {
     stringstream listePresence;
     
-    listePresence << "Liste de Présences : " << endl;
-    listePresence << "#Entreprises présentes : "<< endl;
+    listePresence << "Liste de Presences : " << endl;
+    listePresence << "# Entreprises presentes : "<< endl;
     
     for(int i = 0; i < listeEntreprises_.size(); i++)
     {
         if(listeEntreprises_[i] != 0)
         {
-            listePresence << "#-";
+            listePresence << "#- ";
             listePresence << listeEntreprises_[i]->getString();
             listePresence << endl;
         }
     }
 
-    listePresence << "#Professeurs présents : "<< endl;
+    listePresence << "# Professeurs presents : "<< endl;
     
     for(int i = 0; i < listeProfesseurs_.size(); i++)
     {
         if(listeProfesseurs_[i] != 0)
         {
-            listePresence << "#-";
+            listePresence << "#- ";
             listePresence << listeProfesseurs_[i]->getString();
             listePresence << endl;
         }
     }
     
-    listePresence << "#Etudiants présents : "<< endl;
+    listePresence << "# Etudiants presents : "<< endl;
     
     for(int i = 0; i < listeEtudiants_.size(); i++)
     {
         if(listeEtudiants_[i] != 0)
         {
-            listePresence << "#-";
+            listePresence << "#- ";
             listePresence << listeEtudiants_[i]->getString();
             listePresence << endl;
         }
