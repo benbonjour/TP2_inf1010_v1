@@ -64,7 +64,7 @@ void VinsEtFromages::addEntreprise(Entreprise& uneEntreprise)
 {
     bool trouver= false;
     
-    for (int i = 0; i < listeEntreprises_.size(); i++)
+    for (unsigned int i = 0; i < listeEntreprises_.size(); i++)
     {
         if(listeEntreprises_[i] == &uneEntreprise)
         {
@@ -95,7 +95,7 @@ void VinsEtFromages::addProfesseur(Professeur& unProfesseur)
 {
     bool trouver= false;
     
-    for (int i = 0; i < listeProfesseurs_.size(); i++)
+    for (unsigned int i = 0; i < listeProfesseurs_.size(); i++)
     {
         if(listeProfesseurs_[i] == &unProfesseur)
         {
@@ -125,7 +125,7 @@ void VinsEtFromages::addEtudiant(Etudiant& unEtudiant)
 {
     bool trouver= false;
     
-    for (int i = 0; i < listeEtudiants_.size(); i++)
+    for (unsigned int i = 0; i < listeEtudiants_.size(); i++)
     {
         if(listeEtudiants_[i] == &unEtudiant)
         {
@@ -153,7 +153,7 @@ void VinsEtFromages::addEtudiant(Etudiant& unEtudiant)
  ************************************************************************************/
 void VinsEtFromages::delEntreprise(Entreprise& uneEntreprise)
 {
-    for (int i = 0; i < listeEntreprises_.size(); i++)
+    for (unsigned int i = 0; i < listeEntreprises_.size(); i++)
     {
         if(listeEntreprises_[i] == &uneEntreprise)
         {
@@ -172,7 +172,7 @@ void VinsEtFromages::delEntreprise(Entreprise& uneEntreprise)
  ************************************************************************************/
 void VinsEtFromages::delProfesseur(Professeur& unProfesseur)
 {
-    for (int i = 0; i < listeProfesseurs_.size(); i++)
+    for (unsigned int i = 0; i < listeProfesseurs_.size(); i++)
     {
         if(listeProfesseurs_[i] == &unProfesseur)
         {
@@ -191,7 +191,7 @@ void VinsEtFromages::delProfesseur(Professeur& unProfesseur)
  ************************************************************************************/
 void VinsEtFromages::delEtudiant(Etudiant& unEtudiant)
 {
-    for (int i = 0; i < listeEtudiants_.size(); i++)
+    for (unsigned int i = 0; i < listeEtudiants_.size(); i++)
     {
         if(listeEtudiants_[i] == &unEtudiant)
         {
@@ -213,9 +213,9 @@ string VinsEtFromages::afficherPresent() const
     stringstream listePresence;
     
     listePresence << "Liste de Presences : " << endl;
-    listePresence << "# Entreprises presentes : "<< endl;
+	listePresence << "\n# Entreprises presentes : "<< endl;
     
-    for(int i = 0; i < listeEntreprises_.size(); i++)
+    for(unsigned int i = 0; i < listeEntreprises_.size(); i++)
     {
         if(listeEntreprises_[i] != 0)
         {
@@ -225,9 +225,9 @@ string VinsEtFromages::afficherPresent() const
         }
     }
 
-    listePresence << "# Professeurs presents : "<< endl;
+    listePresence << "\n# Professeurs presents : "<< endl;
     
-    for(int i = 0; i < listeProfesseurs_.size(); i++)
+    for(unsigned int i = 0; i < listeProfesseurs_.size(); i++)
     {
         if(listeProfesseurs_[i] != 0)
         {
@@ -237,9 +237,9 @@ string VinsEtFromages::afficherPresent() const
         }
     }
     
-    listePresence << "# Etudiants presents : "<< endl;
+    listePresence << "\n# Etudiants presents : "<< endl;
     
-    for(int i = 0; i < listeEtudiants_.size(); i++)
+    for(unsigned int i = 0; i < listeEtudiants_.size(); i++)
     {
         if(listeEtudiants_[i] != 0)
         {
@@ -262,17 +262,24 @@ string VinsEtFromages::afficherPresent() const
  ************************************************************************************/
 vector<Individu> VinsEtFromages::getListeIndividus() const
 {
-    vector<Individu> listeIndividu;
-   
-    /*
-    for(int i = 0; i < listeEntreprises_.size(); i++)
+    vector <Individu> listeIndividu;
+	int position = 0;
+
+    for(unsigned int i = 0; i < listeEntreprises_.size(); i++)
     {
         if(listeEntreprises_[i] != 0)
         {
-            listeIndividu.push_back(*listeEntreprises_[i]);
+			listeIndividu.push_back(*listeEntreprises_[i]);
+			/*
+			for (int j = 0; j < listeIndividu[i].getNbVinsPreferes(); i++)
+			{
+				listeIndividu[i].add(listeEntreprises_[i]->getVinPrefere(j));
+			}
+			*/
+
         }
     }
-    
+   
         for(int i = 0; i < listeProfesseurs_.size(); i++)
     {
         if(listeProfesseurs_[i] != 0)
@@ -285,9 +292,35 @@ vector<Individu> VinsEtFromages::getListeIndividus() const
     {
         if(listeEtudiants_[i] != 0)
         {
-            listeIndividu.push_back(*listeEtudiants_[i])
+            listeIndividu.push_back(*listeEtudiants_[i]);
         }
-    } */
+    } 
     
+
     return listeIndividu;
+}
+
+/************************************************************************************
+* Description              : string VinsEtFromages::afficherIndividus() const : Cette
+*							 méthode retourne une chaine de caractère contenant les
+*							 information de tous les individus présents au Vin et Fromage.
+* Parametre                : AUCUN
+* Valeur de retour         : string
+* Remarque                 : Cette fonction est constante.
+************************************************************************************/
+string VinsEtFromages::afficherIndividus() const
+{
+	string information = "\n\nIndividus presents : \n";
+	vector<Individu> listePresence;
+
+	listePresence = getListeIndividus();
+
+	for (int i = 0; i < listePresence.size(); i++)
+	{
+		information += "\n#- ";
+		information += listePresence[i].Individu::getString();
+	}
+
+	information += "\n";
+	return information;
 }

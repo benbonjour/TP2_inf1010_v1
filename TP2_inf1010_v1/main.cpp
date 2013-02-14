@@ -117,6 +117,7 @@ int main() {
 	string* listeHypercube;
 
 	listePoint = new string[1];
+	listePoint[0] = "Vin mauvais";
 
 	listeLigne = new string[1];
 	listeLigne[0] = "Mon vin plat";
@@ -132,7 +133,7 @@ int main() {
 
 	//Entreprise();
 
-	Entreprise point("Dimension-0", "Point", "Bon", listePoint, 1, 0, 1, 1, 1);
+	Entreprise point("Dimension-0", "Point", "Bon", listePoint, 1, 1, 1, 1, 1);
 	Entreprise ligne("Dimension-1", "Secante", "Parallele", listeLigne, 1, 1, 1, 1, 2.5);
 	Entreprise carre("Dimension-2", "Losange", "Rectangle", listeCarre, 1, 1, 1, 1, 2.5);
 	Entreprise cube("Dimension-3", "XYZ", "Plate", listeCube, 1, 1, 1, 1, 2.5);
@@ -168,6 +169,8 @@ int main() {
 
 	// Afficher la liste de tous les individus qui seront présents au
 	// Vins & Fromages en utilisant la méthode afficherIndividus()
+
+	cout << infoLog.afficherIndividus();
 
 
 	return 0;

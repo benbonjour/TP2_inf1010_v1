@@ -75,11 +75,14 @@ Individu::Individu(const Individu& unIndividu)
     prenom_ = unIndividu.prenom_;
     prixEntree_ = unIndividu.prixEntree_;
     listeVinsPreferes_ = new string[unIndividu.capaciteListeVins_];
+	tailleListeVins_ = unIndividu.tailleListeVins_;
+	capaciteListeVins_ = unIndividu.capaciteListeVins_;
     // on copie les valeurs du tableau d'un individu dans celui de l'individu creer
     for (int i = 0; i < capaciteListeVins_; i++)
     {
         listeVinsPreferes_[i] = unIndividu.listeVinsPreferes_[i];
     }
+
 }
 
    
@@ -183,14 +186,14 @@ Individu& Individu::operator=(const Individu& unIndividu)
     {
         nom_ = unIndividu.nom_;
         prenom_ = unIndividu.prenom_;
-        listeVinsPreferes_ = unIndividu.listeVinsPreferes_;
+        //listeVinsPreferes_ = unIndividu.listeVinsPreferes_;
         tailleListeVins_ = unIndividu.tailleListeVins_;
         capaciteListeVins_ = unIndividu.capaciteListeVins_;
         prixEntree_ = unIndividu.prixEntree_;
         
         delete [] listeVinsPreferes_;
         listeVinsPreferes_ = new string[capaciteListeVins_];
-        
+
         for (int i = 0; i < capaciteListeVins_; i++)
         {
             listeVinsPreferes_[i] = unIndividu.listeVinsPreferes_[i];
@@ -328,13 +331,18 @@ string Individu::getString() const
 {
     stringstream information;
     
-    information << "Individu: " << prenom_ << " " << nom_ << " - Prix:" << prixEntree_ << "CAD";
+    information << "Individu: " << prenom_ << " " << nom_ << " - Prix: " << prixEntree_ << " CAD";
     
     if(tailleListeVins_ != 0)
     {
+		information << " - Vins : ";
         for (int i = 0; i < tailleListeVins_; i++)
         {
             information << listeVinsPreferes_[i];
+			if (i != tailleListeVins_ - 1)
+			{
+				information << ", ";
+			}
         }
     }
     
