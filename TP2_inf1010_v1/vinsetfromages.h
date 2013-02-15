@@ -27,9 +27,9 @@ public:
     ~VinsEtFromages();
     
     //Add & Del
-    void addEntreprise(Entreprise& uneEntreprise);
-    void addProfesseur(Professeur& unProfesseur);
-    void addEtudiant(Etudiant& unEtudiant);
+    void addEntreprise(Entreprise& uneEntreprise); // permettent d'ajouter et 
+    void addProfesseur(Professeur& unProfesseur);  // d'enlever certains elements
+    void addEtudiant(Etudiant& unEtudiant);		   // du vin fromage.
     void delEntreprise(Entreprise& uneEntreprise);
     void delProfesseur(Professeur& unProfesseur);
     void delEtudiant(Etudiant& unEtudiant);

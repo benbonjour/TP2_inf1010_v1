@@ -174,25 +174,24 @@ bool Individu::operator==(Individu& unIndividu) const
 /************************************************************************************
  * Description              : Individu& operator=(const Individu& unIndividu),
  *                            fonction qui retourne l'individu de gauche maintenant 
- *                            avec les memes attributs a droite du egal.
+ *                            avec les memes attributs que celui a droite du egal.
  * Parametre                : Individu& unIndividu(IN): l'individu a droite du egal
  *                            dont les valeurs sont copiees dans celui de gauche. 
- * Valeur de retour         : Individu: l'individu appelant la fonciton (gauche)
+ * Valeur de retour         : Individu: l'individu appelant la fonction (gauche)
  * Remarque                 : AUCUNE
  ************************************************************************************/
 Individu& Individu::operator=(const Individu& unIndividu)
 {
-    if(this != &unIndividu)
+    if(this != &unIndividu) // Pour empecher la copie sur lui-meme
     {
         nom_ = unIndividu.nom_;
         prenom_ = unIndividu.prenom_;
-        //listeVinsPreferes_ = unIndividu.listeVinsPreferes_;
         tailleListeVins_ = unIndividu.tailleListeVins_;
         capaciteListeVins_ = unIndividu.capaciteListeVins_;
         prixEntree_ = unIndividu.prixEntree_;
         
-        delete [] listeVinsPreferes_;
-        listeVinsPreferes_ = new string[capaciteListeVins_];
+        delete [] listeVinsPreferes_; //On desalloue la liste de vin 
+        listeVinsPreferes_ = new string[capaciteListeVins_]; // on alloue a nouveau de l'espace
 
         for (int i = 0; i < capaciteListeVins_; i++)
         {
@@ -207,8 +206,8 @@ Individu& Individu::operator=(const Individu& unIndividu)
 
 //Fonction getvinPrefere(), getNbVinsPreferes()
 /************************************************************************************
- * Description              : Individu::getVinPrefere(int i) const, fonction qui ajoute un
- *                            nom de vin à la liste du vin fromage.
+ * Description              : Individu::getVinPrefere(int i) const, fonction qui ajoute
+ *                            un nom de vin à la liste du vin fromage.
  * Parametre                : Int i(IN): le numero correspondant au vin preferes du 
  *                            tableau des vins preferes de l'individu.
  * Valeur de retour         : String nomDuVin: nom du vin prefere
@@ -223,7 +222,7 @@ string Individu::getVinPrefere(int i) const
  * Description              : Individu::getNbVinsPreferes() const, fonction qui ajoute                            
  *                            un nom de vin à la liste du vin fromage.
  * Parametre                : AUCUN
- * Valeur de retour         : Int tailleListeVin: nb de vin dans la liste de 
+ * Valeur de retour         : Int tailleListeVin: nb de vins dans la liste de 
  *                            l'individu.
  * Remarque                 : AUCUNE
  ************************************************************************************/
@@ -242,22 +241,22 @@ int Individu::getNbVinsPreferes() const
  ************************************************************************************/
 void Individu::add(string nomDuVin)
 {
-    if(capaciteListeVins_ < (tailleListeVins_+1))
+    if(capaciteListeVins_ < (tailleListeVins_+1)) // Si le tableau n'est pas suffisamment grand,
     {
-        capaciteListeVins_ = capaciteListeVins_*2;
+        capaciteListeVins_ = capaciteListeVins_*2; // on double la capacite du tableau
         
-        string* tabTemp = new string[capaciteListeVins_];
+        string* tabTemp = new string[capaciteListeVins_]; // on creer un tableau temporaire
         
-        for (int i = 0; i < tailleListeVins_; i++)
+        for (int i = 0; i < tailleListeVins_; i++) // on copie tous les elements dans le tableau 
         {
-            tabTemp[i] = listeVinsPreferes_[i];
+            tabTemp[i] = listeVinsPreferes_[i];    // temporaire
         }
         
-        delete [] listeVinsPreferes_;
-        listeVinsPreferes_ = tabTemp;
+        delete [] listeVinsPreferes_; // on desalloue l'ancien tableau
+        listeVinsPreferes_ = tabTemp; // on refait pointer vers le nouveau tableau
     }
-    listeVinsPreferes_[tailleListeVins_] = nomDuVin;
-    tailleListeVins_++;
+    listeVinsPreferes_[tailleListeVins_] = nomDuVin; // on ajoute le vin
+    tailleListeVins_++; // on incremente le nombre de  vin present dans la liste de l'individu
 }
 
 /************************************************************************************
@@ -329,19 +328,19 @@ double Individu::getPrix() const
  ************************************************************************************/
 string Individu::getString() const
 {
-    stringstream information;
+    stringstream information; // permet de mettre toutes les valeurs dans une string en sortie
     
     information << "Individu: " << prenom_ << " " << nom_ << " - Prix: " << prixEntree_ << " CAD";
     
-    if(tailleListeVins_ != 0)
+    if(tailleListeVins_ != 0) // affichage des vins
     {
 		information << " - Vins : ";
-        for (int i = 0; i < tailleListeVins_; i++)
+        for (int i = 0; i < tailleListeVins_; i++) // pour tout vin de la liste
         {
-            information << listeVinsPreferes_[i];
+            information << listeVinsPreferes_[i]; // on donne la string au stream
 			if (i != tailleListeVins_ - 1)
 			{
-				information << ", ";
+				information << ", "; //et on ajoute un espace s'il ne s'agit pas du dernier element
 			}
         }
     }

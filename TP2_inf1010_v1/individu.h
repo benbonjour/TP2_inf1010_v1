@@ -3,7 +3,7 @@
  * Auteur                   : Benjamin Brodeur Mathieu & Julien Aymong
  * Description              : Definition de la classe Individu
  * Date de creation         : 6 Fevrier 2013
- * Date de modification     : 
+ * Date de modification     : 14 Fevrier 2013
  ************************************************************************************/
 
 #include <string>
@@ -51,7 +51,7 @@ public:
     string getString() const;
     
     
-protected:
+protected: // Les classes herites ont acces a ce parametre
     
     double prixEntree_;
     

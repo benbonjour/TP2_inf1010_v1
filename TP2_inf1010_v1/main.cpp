@@ -1,9 +1,9 @@
 /************************************************************************************
  * Fichier                  : main.cpp
- * Auteur                   : 
+ * Auteur                   : Benjamin Brodeur Mathieu	& Julien Aymong
  * Description              : Fichier principal de l'application
- * Date de creation         : 
- * Date de modification     : 
+ * Date de creation         : 6 Fevrier 2013
+ * Date de modification     : 14 Fevrier 2013
  ************************************************************************************/
 
 #include <iostream>
@@ -17,21 +17,8 @@
 
 using namespace std;
 
-// Vérification pour les fuites de mémoires
-#define _CRTDBG_MAP_ALLOC // Utilise les allocations avec débogage.
-#include <stdlib.h>
-#include <crtdbg.h>
-#define new new( _NORMAL_BLOCK , __FILE__ , __LINE__ ) // Ajoute le numéro de ligne au rapport de fuites.
-
 int main() {
-
-	// Vérification pour les fuites de mémoires
-	_CrtSetDbgFlag(0
-	| _CRTDBG_ALLOC_MEM_DF    // Débogage d'allocation mémoire.
-	| _CRTDBG_LEAK_CHECK_DF   // Rapport de fuites à la sortie du programme.
-	| _CRTDBG_CHECK_ALWAYS_DF // Vérifie la corruption à chaque new/delete (lent).
-	);
-
+	
 	// Créer un objet VinsEtFromages
 
 	VinsEtFromages infoLog;
@@ -63,15 +50,12 @@ int main() {
 	alexandre.add("dry gin");
 	benjamin.add("non merci ca va :D");
 
-
-
 	// Les ajouter à la liste des étudiants assistant au Vins & Fromages
 
 	infoLog.addEtudiant(marie);
 	infoLog.addEtudiant(julien);
 	infoLog.addEtudiant(alexandre);
 	infoLog.addEtudiant(benjamin);
-
 
 	// Créer deux (2) professeurs
 	string* listeMajikarp;
@@ -97,17 +81,11 @@ int main() {
 
 	majikarp.del("De l'eau filtree pur a 100%");
 
-		
-
 	// Les ajouter à la liste des professeurs assistant au Vins & Fromages
 
 	infoLog.addProfesseur(majikarp);
 	infoLog.addProfesseur(ditto);
-
-
-	//cout << infoLog.afficherPresent();
 	
-
 	// Créer cinq (5) représentants d'entreprises
 
 	string* listePoint;
@@ -171,7 +149,6 @@ int main() {
 	// Vins & Fromages en utilisant la méthode afficherIndividus()
 
 	cout << infoLog.afficherIndividus();
-
 
 	return 0;
 }

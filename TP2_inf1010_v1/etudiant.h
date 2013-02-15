@@ -17,6 +17,7 @@ using namespace std;
 class Etudiant : public Individu
 {
 public:
+
     //Constructeurs
     Etudiant();
     Etudiant(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, string departement, string niveau, double prixEntree = 14.5);

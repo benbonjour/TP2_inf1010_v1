@@ -37,7 +37,7 @@ public:
     string getString() const;
     
 private:
-    
+    // attributs d'entreprise
     string nomEntreprise_;
     int stagiairesCherches_;
     int emploisProposes_;

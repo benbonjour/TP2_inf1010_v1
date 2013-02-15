@@ -24,7 +24,7 @@
 Professeur::Professeur()
 {
     departement_ = "un mauvais departement";
-    bureau_ = "aucun bureau";
+    bureau_ = "aucun bureau"; // si vrai...
 }
 
 /************************************************************************************
@@ -46,6 +46,7 @@ Professeur::Professeur()
  ************************************************************************************/
 Professeur::Professeur(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListesVins, string departement, string bureau, double prixEntree) 
 	: Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListesVins, prixEntree)
+	// on donne au constructeur individu la majorite des valeurs mis a part departement et bureau.
 {
     departement_ = departement;
     bureau_ = bureau;
@@ -58,7 +59,7 @@ Professeur::Professeur(string nom, string prenom, string* listeVinsPreferes, int
  * Valeur de retour         : AUCUNE
  * Remarque                 : AUCUNE
  ************************************************************************************/
-Professeur::~Professeur()
+Professeur::~Professeur() // aucune implementation requise
 {
 }
 
@@ -131,8 +132,8 @@ string Professeur::getString() const
     if(getNbVinsPreferes() != 0)
     {
 		information << " Vins - ";
-		for (int i = 0; i < getNbVinsPreferes(); i++)
-        {
+		for (int i = 0; i < getNbVinsPreferes(); i++) // encore une fois on affiche la liste des vins
+        {											  // grace au stringstream.
             information << getVinPrefere(i);
 			if (i != getNbVinsPreferes() - 1)
 			{

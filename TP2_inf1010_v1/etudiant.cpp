@@ -24,10 +24,9 @@ using namespace std;
 Etudiant::Etudiant()
 {
 	Individu::Individu();
-	departement_ = "Genie des materiaux LOLOLOL";
-	niveau_ = "Meme pas obtenu son Diplome d'etude secondaire XD";
+	departement_ = "Genie des materiaux";
+	niveau_ = "Diplome en voie d'obtention";
 	prixEntree_ = 14,5;
-
 }
 
 /************************************************************************************
@@ -41,10 +40,9 @@ Etudiant::Etudiant()
 ************************************************************************************/
 Etudiant::Etudiant(string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, string departement, string niveau, double prixEntree)
 		: Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListeVins, prixEntree), departement_(departement), niveau_(niveau)
-{
+{// on passe au constructeur d'individu la majorite des attributs a l'exception de departement et niveau
 
 }
-
 
 //Destructeur
 /************************************************************************************
@@ -54,11 +52,9 @@ Etudiant::Etudiant(string nom, string prenom, string* listeVinsPreferes, int cap
 * Valeur de retour         : AUCUNE
 * Remarque                 : AUCUNE
 ************************************************************************************/
-Etudiant::~Etudiant()
+Etudiant::~Etudiant() // aucune implementation necessaire
 {
-
 }
-
 
 //Modifiers & Accesseurs
 /************************************************************************************
@@ -130,12 +126,12 @@ string Etudiant::getString() const
 	{
 		int nbVins = getNbVinsPreferes();
 		information << " - Vins : ";
-		for (int i = 0; i < nbVins; i++)
+		for (int i = 0; i < nbVins; i++) // boucle sur le nombre de vin 
 		{
 			information << getVinPrefere(i);
 			if (i != nbVins - 1)
 			{
-				information << ", ";
+				information << ", "; // affiche un espace s'il ne s'agit pas du dernier vin
 			}
 		}
 	}

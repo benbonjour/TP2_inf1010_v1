@@ -48,7 +48,7 @@ VinsEtFromages::VinsEtFromages()
  * Valeur de retour         : AUCUNE
  * Remarque                 : AUCUNE
  ************************************************************************************/
-VinsEtFromages::~VinsEtFromages()
+VinsEtFromages::~VinsEtFromages() // aucune implementation requise
 {
 }
 
@@ -64,24 +64,20 @@ void VinsEtFromages::addEntreprise(Entreprise& uneEntreprise)
 {
     bool trouver= false;
     
-    for (unsigned int i = 0; i < listeEntreprises_.size(); i++)
+    for (unsigned int i = 0; i < listeEntreprises_.size(); i++) // si l'entreprise est trouvee
     {
         if(listeEntreprises_[i] == &uneEntreprise)
         {
             trouver = true;
-            cout << "Erreur, l'entreprise specifiee existe deja : " << endl;
+            cout << "Erreur, l'entreprise specifiee existe deja : " << endl; // on affiche ce message
             listeEntreprises_[i]->getString();
         }
     }
     
     if(!trouver)  // si l'entreprise n'est pas trouver on l'ajoute
     {
-        //Entreprise* deuxEntreprise = new Entreprise;
-        //deuxEntreprise = &uneEntreprise;
         listeEntreprises_.push_back(&uneEntreprise);
     }
-             
-    
 }
 
 /************************************************************************************
@@ -97,18 +93,16 @@ void VinsEtFromages::addProfesseur(Professeur& unProfesseur)
     
     for (unsigned int i = 0; i < listeProfesseurs_.size(); i++)
     {
-        if(listeProfesseurs_[i] == &unProfesseur)
+        if(listeProfesseurs_[i] == &unProfesseur) // si le professeur existe deja
         {
             trouver = true;
-            cout << "Erreur le professeur specifiee existe deja : " << endl;
+            cout << "Erreur le professeur specifiee existe deja : " << endl; // on affiche ce message
             listeProfesseurs_[i]->getString();
         }
     }
     
     if(!trouver)  // si le professeur n'est pas trouver on l'ajoute
     {
-        //Professeur* deuxProfesseur = new Professeur;
-        //deuxProfesseur = &unProfesseur;
         listeProfesseurs_.push_back(&unProfesseur);
     }
    
@@ -127,18 +121,16 @@ void VinsEtFromages::addEtudiant(Etudiant& unEtudiant)
     
     for (unsigned int i = 0; i < listeEtudiants_.size(); i++)
     {
-        if(listeEtudiants_[i] == &unEtudiant)
+        if(listeEtudiants_[i] == &unEtudiant) // si l'etudiant est trouve dans la liste
         {
             trouver = true;
-            cout << "Erreur l'etudiant specifie existe deja : " << endl;
+            cout << "Erreur l'etudiant specifie existe deja : " << endl; // on affiche ce message
             listeEtudiants_[i]->getString();
         }
     }
     
     if(!trouver)  // si l'etudiant n'est pas trouver on l'ajoute
     {
-        //Etudiant* deuxEtudiant = new Etudiant();
-        //deuxEtudiant = &unEtudiant;
         listeEtudiants_.push_back(&unEtudiant);
     }
 }
@@ -151,7 +143,7 @@ void VinsEtFromages::addEtudiant(Etudiant& unEtudiant)
  * Remarque                 : L'espace du pointeur n'est pas desallouer mais seulement
  *                            mis a zero.
  ************************************************************************************/
-void VinsEtFromages::delEntreprise(Entreprise& uneEntreprise)
+void VinsEtFromages::delEntreprise(Entreprise& uneEntreprise) // on met le pointeur a zero.
 {
     for (unsigned int i = 0; i < listeEntreprises_.size(); i++)
     {
@@ -170,7 +162,7 @@ void VinsEtFromages::delEntreprise(Entreprise& uneEntreprise)
  * Remarque                 : L'espace du pointeur n'est pas desallouer mais seulement
  *                            mis a zero.
  ************************************************************************************/
-void VinsEtFromages::delProfesseur(Professeur& unProfesseur)
+void VinsEtFromages::delProfesseur(Professeur& unProfesseur) // on met le pointeur a zero
 {
     for (unsigned int i = 0; i < listeProfesseurs_.size(); i++)
     {
@@ -189,7 +181,7 @@ void VinsEtFromages::delProfesseur(Professeur& unProfesseur)
  * Remarque                 : L'espace du pointeur n'est pas desallouer mais seulement
  *                            mis a zero.
  ************************************************************************************/
-void VinsEtFromages::delEtudiant(Etudiant& unEtudiant)
+void VinsEtFromages::delEtudiant(Etudiant& unEtudiant) // on met le pointeur a zero
 {
     for (unsigned int i = 0; i < listeEtudiants_.size(); i++)
     {
@@ -215,7 +207,7 @@ string VinsEtFromages::afficherPresent() const
     listePresence << "Liste de Presences : " << endl;
 	listePresence << "\n# Entreprises presentes : "<< endl;
     
-    for(unsigned int i = 0; i < listeEntreprises_.size(); i++)
+    for(unsigned int i = 0; i < listeEntreprises_.size(); i++) // on affiche tout d'abord les entreprises
     {
         if(listeEntreprises_[i] != 0)
         {
@@ -227,7 +219,7 @@ string VinsEtFromages::afficherPresent() const
 
     listePresence << "\n# Professeurs presents : "<< endl;
     
-    for(unsigned int i = 0; i < listeProfesseurs_.size(); i++)
+    for(unsigned int i = 0; i < listeProfesseurs_.size(); i++) // puis les profs
     {
         if(listeProfesseurs_[i] != 0)
         {
@@ -239,7 +231,7 @@ string VinsEtFromages::afficherPresent() const
     
     listePresence << "\n# Etudiants presents : "<< endl;
     
-    for(unsigned int i = 0; i < listeEtudiants_.size(); i++)
+    for(unsigned int i = 0; i < listeEtudiants_.size(); i++) // et les etudiants
     {
         if(listeEtudiants_[i] != 0)
         {
@@ -315,7 +307,7 @@ string VinsEtFromages::afficherIndividus() const
 
 	listePresence = getListeIndividus();
 
-	for (int i = 0; i < listePresence.size(); i++)
+	for (int i = 0; i < listePresence.size(); i++) // affichage de la liste d'individus
 	{
 		information += "\n#- ";
 		information += listePresence[i].Individu::getString();

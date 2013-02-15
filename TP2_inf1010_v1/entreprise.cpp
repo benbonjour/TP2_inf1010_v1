@@ -30,9 +30,11 @@ Entreprise::Entreprise()
 }
 
 /************************************************************************************
-* Description              : Entreprise::Entreprise(string nomEntreprise, string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, int stagiairesCherches, int emploisProposes, double prixEntree) :
-*							 Cette méthode initialise les attributs avec les valeurs
-*							 choisies par l'utilisateur.
+* Description              : Entreprise::Entreprise(string nomEntreprise, string nom,
+* 							 string prenom, string* listeVinsPreferes, int capaciteListeVins,
+* 							 int tailleListeVins, int stagiairesCherches, int emploisProposes,
+*                            double prixEntree) : Cette méthode initialise les attributs avec 
+* 							 les valeurs choisies par l'utilisateur.
 * Parametre                : string nomEntreprise (IN) : nom de l'entreprise du représentant
 *							 string nom (IN) : nom du représentant
 *							 string prenom (IN) : prénom du représentant
@@ -47,7 +49,7 @@ Entreprise::Entreprise()
 ************************************************************************************/
 Entreprise::Entreprise(string nomEntreprise, string nom, string prenom, string* listeVinsPreferes, int capaciteListeVins, int tailleListeVins, int stagiairesCherches, int emploisProposes, double prixEntree)
 	: Individu(nom, prenom, listeVinsPreferes, capaciteListeVins, tailleListeVins, prixEntree), nomEntreprise_(nomEntreprise), stagiairesCherches_(stagiairesCherches), emploisProposes_(emploisProposes)
-{
+{// on donne encore une fois la majorite des attributs au constructeur d'individu
 
 }
 
@@ -60,7 +62,7 @@ Entreprise::Entreprise(string nomEntreprise, string nom, string prenom, string* 
 * Valeur de retour         : AUCUNE
 * Remarque                 : AUCUNE
 ************************************************************************************/
-Entreprise::~Entreprise()
+Entreprise::~Entreprise() // n'a pas a etre implementer ici.
 {
 
 }
@@ -157,13 +159,13 @@ string Entreprise::getString() const
 {
 	stringstream information;
 	information << "Entreprise : " << getPrenom() << " " << getNom() << ", " + nomEntreprise_ << " (" << stagiairesCherches_ << " stages, " << emploisProposes_ << " emplois) - Prix : " << getPrix() << " CAD";
-	if ( getNbVinsPreferes() != 0)
+	if ( getNbVinsPreferes() != 0) // s'il y a un ou plus d'un vin dans la liste
 	{
 		int nbVins = getNbVinsPreferes();
 		information << " - Vins : ";
-		for (int i = 0; i < nbVins; i++)
+		for (int i = 0; i < nbVins; i++) // boucle sur le nombre de vin
 		{
-			information << getVinPrefere(i);
+			information << getVinPrefere(i); // donne le vin au stringstream
 			if (i != nbVins - 1)
 			{
 				information << ", ";
