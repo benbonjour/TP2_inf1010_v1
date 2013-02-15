@@ -3,7 +3,7 @@
  * Auteur                   : Benjamin Brodeur Mathieu & Julien Aymong
  * Description              : Definition de la classe Professeur
  * Date de creation         : 6 Fevrier 2013
- * Date de modification     : 
+ * Date de modification     : 14 Fevrier 2013
  ************************************************************************************/
 
 #include <string>

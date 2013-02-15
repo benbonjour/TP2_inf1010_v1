@@ -3,7 +3,7 @@
  * Auteur                   : Julien Aymong & Benjamin Brodeur Mathieu
  * Description              : Implémentation de la classe Entreprise
  * Date de creation         : 7 février 2013
- * Date de modification     : 
+ * Date de modification     : 14 Fevrier 2013
  ************************************************************************************/
 
 #include <string>
